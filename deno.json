@@ -1,7 +1,7 @@
 {
   "tasks": {
     "build": "wasm-pack build --target deno --out-dir build",
-    "watch": "cargo watch -w src/lib.rs -s \"deno task build\""
+    "dev": "cargo watch -w src/lib.rs -s \"deno task build\""
   },
   "fmt": {
     "useTabs": false,

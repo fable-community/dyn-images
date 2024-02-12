@@ -102,7 +102,7 @@ Deno.test('hp 90 damage 10', async (test) => {
     join(directory, `__snapshots__/${test.name}.png`),
   );
 
-  const image = hp(90, 10);
+  const image = hp(90, -10);
 
   if (!existsSync(snapShotPath)) {
     await Deno.writeFile(
@@ -119,7 +119,7 @@ Deno.test('hp 83 damage 17', async (test) => {
     join(directory, `__snapshots__/${test.name}.png`),
   );
 
-  const image = hp(83, 17);
+  const image = hp(83, -17);
 
   if (!existsSync(snapShotPath)) {
     await Deno.writeFile(
@@ -136,7 +136,58 @@ Deno.test('hp 50 damage 10', async (test) => {
     join(directory, `__snapshots__/${test.name}.png`),
   );
 
+  const image = hp(50, -10);
+
+  if (!existsSync(snapShotPath)) {
+    await Deno.writeFile(
+      snapShotPath,
+      image,
+    );
+  } else {
+    assertEquals(await compare(snapShotPath, image), 0);
+  }
+});
+
+Deno.test('hp 10 heal 10', async (test) => {
+  const snapShotPath = new URL(
+    join(directory, `__snapshots__/${test.name}.png`),
+  );
+
+  const image = hp(10, 10);
+
+  if (!existsSync(snapShotPath)) {
+    await Deno.writeFile(
+      snapShotPath,
+      image,
+    );
+  } else {
+    assertEquals(await compare(snapShotPath, image), 0);
+  }
+});
+
+Deno.test('hp 50 heal 10', async (test) => {
+  const snapShotPath = new URL(
+    join(directory, `__snapshots__/${test.name}.png`),
+  );
+
   const image = hp(50, 10);
+
+  if (!existsSync(snapShotPath)) {
+    await Deno.writeFile(
+      snapShotPath,
+      image,
+    );
+  } else {
+    assertEquals(await compare(snapShotPath, image), 0);
+  }
+});
+
+Deno.test('hp 50 heal 1', async (test) => {
+  const snapShotPath = new URL(
+    join(directory, `__snapshots__/${test.name}.png`),
+  );
+
+  const image = hp(50, 1);
 
   if (!existsSync(snapShotPath)) {
     await Deno.writeFile(

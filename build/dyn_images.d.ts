@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
 * @param {number} left
-* @param {number} damage
+* @param {number} diff
 * @returns {Uint8Array}
 */
-export function hp(left: number, damage: number): Uint8Array;
+export function hp(left: number, diff: number): Uint8Array;

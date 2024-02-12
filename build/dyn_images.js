@@ -48,11 +48,11 @@ function getStringFromWasm0(ptr, len) {
 }
 /**
 * @param {number} left
-* @param {number} damage
+* @param {number} diff
 * @returns {Uint8Array}
 */
-export function hp(left, damage) {
-    const ret = wasm.hp(left, damage);
+export function hp(left, diff) {
+    const ret = wasm.hp(left, diff);
     return takeObject(ret);
 }
 
