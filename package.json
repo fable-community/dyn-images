@@ -1,15 +1,21 @@
 {
   "name": "@fable-community/dyn-images",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Used in Fable to create dynamic images on the fly",
   "main": "build/dyn_images.js",
   "files": [
     "build/dyn_images.js",
+    "build/dyn_images_bg.js",
     "build/dyn_images.d.ts",
     "build/dyn_images_bg.wasm",
+    "build/dyn_images_bg.wasm.d.ts",
     "README.md",
     "LICENSE"
   ],
+  "scripts": {
+    "build": "wasm-pack build --target bundler --out-dir build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fable-community/dyn-images.git"
@@ -20,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/fable-community/dyn-images/issues"
   },
-  "homepage": "https://github.com/fable-community/dyn-images#readme"
+  "homepage": "https://github.com/fable-community/dyn-images#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "pixelmatch": "^7.1.0",
+    "sharp": "^0.33.5",
+    "wasm-pack": "^0.13.1"
+  }
 }
