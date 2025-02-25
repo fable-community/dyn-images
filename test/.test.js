@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 import sharp from "sharp";
 import pixelmatch from "pixelmatch";
 import { join } from "path";
